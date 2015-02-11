@@ -1,0 +1,49 @@
+// Pull the plugin from Maven Central
+buildscript {
+
+    project.ext.roboVMVersion = "1.0.0-beta-03"
+    project.ext.roboVMGradleVersion = "1.0.0-beta-03"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    }
+    dependencies {
+        classpath group: 'org.robovm', name: 'robovm-gradle-plugin', version: project.roboVMGradleVersion
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'robovm'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+dependencies {
+    compile group: 'org.robovm', name: 'robovm-rt', version: project.roboVMVersion
+    compile group: 'org.robovm', name: 'robovm-cocoatouch', version: project.roboVMVersion
+
+    compile 'io.reactivex:rxjava:1.0.5'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp:okhttp:2.2.0'
+}
+
+robovm {
+    iosSkipSigning = false
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}

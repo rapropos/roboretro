@@ -1,0 +1,233 @@
+Hardware Model:      iPad2,4
+Code Type:           ARM (Native)
+
+OS Version:          iOS 8.1.3 (12B466)
+Report Version:      105
+
+Exception Type:  EXC_CRASH (SIGBUS)
+Exception Codes: 0x0000000000000000, 0x0000000000000000
+Triggered by Thread:  1
+
+Thread 0 name:  Dispatch queue: com.apple.main-thread
+Thread 0:
+0   libsystem_platform.dylib      	0x34762b2c OSAtomicCompareAndSwap64 + 24
+1   RoboRetro                     	0x00040a78 Java_sun_misc_Unsafe_putLongVolatile + 24
+2   RoboRetro                     	0x0092a454 [J]sun.misc.Unsafe.putOrderedLong(Ljava/lang/Object;JJ)V + 44
+3   RoboRetro                     	0x009196f0 [J]rx.internal.util.unsafe.ConcurrentSequencedCircularArrayQueue.soSequence([JJJ)V (/ConcurrentSequencedCircularArrayQueue.java:51)
+4   RoboRetro                     	0x00919610 [J]rx.internal.util.unsafe.ConcurrentSequencedCircularArrayQueue.<init>(I)V (/ConcurrentSequencedCircularArrayQueue.java:42)
+5   RoboRetro                     	0x00919e42 [J]rx.internal.util.unsafe.MpmcArrayQueueL1Pad.<init>(I)V + 14
+6   RoboRetro                     	0x00919e6a [J]rx.internal.util.unsafe.MpmcArrayQueueProducerField.<init>(I)V + 14
+7   RoboRetro                     	0x00919e56 [J]rx.internal.util.unsafe.MpmcArrayQueueL2Pad.<init>(I)V + 14
+8   RoboRetro                     	0x00919cb6 [J]rx.internal.util.unsafe.MpmcArrayQueueConsumerField.<init>(I)V + 14
+9   RoboRetro                     	0x009198a2 [J]rx.internal.util.unsafe.MpmcArrayQueue.<init>(I)V (/MpmcArrayQueue.java:118)
+10  RoboRetro                     	0x00914754 [J]rx.internal.util.ObjectPool.initialize(I)V (/ObjectPool.java:125)
+11  RoboRetro                     	0x00914652 [J]rx.internal.util.ObjectPool.<init>(IIJ)V (/ObjectPool.java:55)
+12  RoboRetro                     	0x0091460c [J]rx.internal.util.ObjectPool.<init>()V (/ObjectPool.java:37)
+13  RoboRetro                     	0x00915942 [J]rx.internal.util.RxRingBuffer$1.<init>()V + 14
+14  RoboRetro                     	0x00915870 [J]rx.internal.util.RxRingBuffer.<clinit>()V (/RxRingBuffer.java:278)
+15  RoboRetro                     	0x0093d3b0 _call0 + 44
+16  RoboRetro                     	0x00930218 rvmInitialize + 408
+17  RoboRetro                     	0x0092ad7c _bcInitializeClass + 24
+18  RoboRetro                     	0x00914dce [j]rx.internal.util.RxRingBuffer.SIZE(I)[get][clinit] + 26
+19  RoboRetro                     	0x008fc3ca [J]rx.internal.operators.OperatorMerge$MergeSubscriber.onStart()V + 18
+20  RoboRetro                     	0x008e131a [J]rx.Observable$1.call(Lrx/Subscriber;)V + 226
+21  RoboRetro                     	0x008e138e [J]rx.Observable$1.call(Ljava/lang/Object;)V + 30
+22  RoboRetro                     	0x008e1334 [J]rx.Observable$1.call(Lrx/Subscriber;)V + 252
+23  RoboRetro                     	0x008e138e [J]rx.Observable$1.call(Ljava/lang/Object;)V + 30
+24  RoboRetro                     	0x008e014a [J]rx.Observable.subscribe(Lrx/Subscriber;)Lrx/Subscription; (/Observable.java:7416)
+25  RoboRetro                     	0x008dfcca [J]rx.Observable.subscribe(Lrx/functions/Action1;)Lrx/Subscription; (/Observable.java:7147)
+26  RoboRetro                     	0x002c234c [J]com.robovm.roboretro.RoboRetroApp.register2()V (/RoboRetroApp.java:57)
+27  RoboRetro                     	0x002c229a [J]com.robovm.roboretro.RoboRetroApp.didFinishLaunching(Lorg/robovm/apple/uikit/UIApplication;Lorg/robovm/apple/uikit/UIApplicationLaunchOptions;)Z (/RoboRetroApp.java:28)
+28  RoboRetro                     	0x00730b94 [J]org.robovm.apple.uikit.UIApplicationDelegate$ObjCProxy.$cb$application$didFinishLaunchingWithOptions$(Lorg/robovm/apple/uikit/UIApplicationDelegate;Lorg/robovm/objc/Selector;Lorg/robovm/apple/uikit/UIApplication;Lorg/robovm/apple/uikit/UIApplicationLaunchOptions;)Z (/Unknown source:1048629)
+29  RoboRetro                     	0x00730c3a [j]org.robovm.apple.uikit.UIApplicationDelegate$ObjCProxy.$cb$application$didFinishLaunchingWithOptions$(Lorg/robovm/apple/uikit/UIApplicationDelegate;Lorg/robovm/objc/Selector;Lorg/robovm/apple/uikit/UIApplication;Lorg/robovm/apple/uikit/UIApplicationLaunchOptions;)Z[callback] + 158
+30  UIKit                         	0x29ae5464 -[UIApplication _handleDelegateCallbacksWithOptions:isSuspended:restoreState:] + 276
+31  UIKit                         	0x29cda510 -[UIApplication _callInitializationDelegatesForMainScene:transitionContext:] + 2352
+32  UIKit                         	0x29cdca44 -[UIApplication _runWithMainScene:transitionContext:completion:] + 1364
+33  UIKit                         	0x29ce72f4 __84-[UIApplication _handleApplicationActivationWithScene:transitionContext:completion:]_block_invoke + 32
+34  UIKit                         	0x29cdb2e8 -[UIApplication workspaceDidEndTransaction:] + 128
+35  FrontBoardServices            	0x2ccf40c6 __31-[FBSSerialQueue performAsync:]_block_invoke + 10
+36  CoreFoundation                	0x2659cffa __CFRUNLOOP_IS_CALLING_OUT_TO_A_BLOCK__ + 10
+37  CoreFoundation                	0x2659c2bc __CFRunLoopDoBlocks + 212
+38  CoreFoundation                	0x2659ae16 __CFRunLoopRun + 1710
+39  CoreFoundation                	0x264e7b2c CFRunLoopRunSpecific + 472
+40  CoreFoundation                	0x264e793e CFRunLoopRunInMode + 102
+41  UIKit                         	0x29adf122 -[UIApplication _run] + 554
+42  UIKit                         	0x29ad9f1c UIApplicationMain + 1436
+43  RoboRetro                     	0x00720e16 [J]org.robovm.apple.uikit.UIApplication.main(ILorg/robovm/rt/bro/ptr/BytePtr$BytePtrPtr;Ljava/lang/String;Ljava/lang/String;)I + 166
+44  RoboRetro                     	0x00720364 [J]org.robovm.apple.uikit.UIApplication.main([Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Class;)V (/UIApplication.java:334)
+45  RoboRetro                     	0x007203a2 [j]org.robovm.apple.uikit.UIApplication.main([Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Class;)V[clinit] + 50
+46  RoboRetro                     	0x002c245a [J]com.robovm.roboretro.RoboRetroApp.main([Ljava/lang/String;)V (/RoboRetroApp.java:80)
+47  RoboRetro                     	0x0093d3b0 _call0 + 44
+48  RoboRetro                     	0x0093614a callVoidMethod + 98
+49  RoboRetro                     	0x00937dc6 rvmCallVoidClassMethodA + 174
+50  RoboRetro                     	0x00937e20 rvmCallVoidClassMethod + 16
+51  RoboRetro                     	0x009320f4 rvmRun + 428
+52  RoboRetro                     	0x0092a7de main + 290
+53  RoboRetro                     	0x001beec8 start + 36
+
+Thread 1 Crashed:
+0   libsystem_kernel.dylib        	0x346ebb38 __psynch_cvwait + 24
+1   libsystem_pthread.dylib       	0x3476a3dc _pthread_cond_wait + 516
+2   libsystem_pthread.dylib       	0x3476b2ac pthread_cond_wait + 36
+3   RoboRetro                     	0x0094e7a4 GC_wait_marker + 24
+4   RoboRetro                     	0x009481c8 GC_help_marker + 148
+5   RoboRetro                     	0x0094d30a GC_mark_thread + 154
+6   libsystem_pthread.dylib       	0x3476ae64 _pthread_body + 136
+7   libsystem_pthread.dylib       	0x3476add6 _pthread_start + 114
+8   libsystem_pthread.dylib       	0x34768b80 thread_start + 4
+
+Thread 2:
+0   libsystem_kernel.dylib        	0x346d8518 mach_msg_trap + 20
+1   libsystem_kernel.dylib        	0x346d830c mach_msg + 36
+2   libsystem_kernel.dylib        	0x346e7e00 mach_msg_server + 324
+3   RoboRetro                     	0x0092c1de exceptionHandlerEntryPoint + 34
+4   RoboRetro                     	0x0094d18e GC_inner_start_routine + 82
+5   RoboRetro                     	0x0094aca0 GC_call_with_stack_base + 28
+6   RoboRetro                     	0x0094e2ac GC_start_routine + 28
+7   libsystem_pthread.dylib       	0x3476ae64 _pthread_body + 136
+8   libsystem_pthread.dylib       	0x3476add6 _pthread_start + 114
+9   libsystem_pthread.dylib       	0x34768b80 thread_start + 4
+
+Thread 3 name:  Dispatch queue: com.apple.libdispatch-manager
+Thread 3:
+0   libsystem_kernel.dylib        	0x346d82c8 kevent64 + 24
+1   libdispatch.dylib             	0x345fae44 _dispatch_mgr_invoke + 276
+2   libdispatch.dylib             	0x345fab76 _dispatch_mgr_thread$VARIANT$mp + 34
+
+Thread 4:
+0   libsystem_kernel.dylib        	0x346ec9cc __workq_kernreturn + 8
+1   libsystem_pthread.dylib       	0x34768e9c _pthread_wqthread + 788
+2   libsystem_pthread.dylib       	0x34768b74 start_wqthread + 4
+
+Thread 5:
+0   libsystem_kernel.dylib        	0x346ec9cc __workq_kernreturn + 8
+1   libsystem_pthread.dylib       	0x34768e9c _pthread_wqthread + 788
+2   libsystem_pthread.dylib       	0x34768b74 start_wqthread + 4
+
+Thread 6:
+0   libsystem_kernel.dylib        	0x346ebb38 __psynch_cvwait + 24
+1   libsystem_pthread.dylib       	0x3476a3dc _pthread_cond_wait + 516
+2   libsystem_pthread.dylib       	0x3476b2ac pthread_cond_wait + 36
+3   RoboRetro                     	0x0093908c waitMonitor + 544
+4   RoboRetro                     	0x00938e44 rvmObjectWait + 112
+5   RoboRetro                     	0x0003e84e Java_java_lang_Object_wait + 14
+6   RoboRetro                     	0x003366b4 [J]java.lang.Object.wait(JI)V + 36
+7   RoboRetro                     	0x00336668 [J]java.lang.Object.wait()V (/Object.java:364)
+8   RoboRetro                     	0x0032c868 [J]java.lang.Daemons$ReferenceQueueDaemon.run()V + 180
+9   RoboRetro                     	0x0034967a [J]java.lang.Thread.run()V (/Thread.java:837)
+10  RoboRetro                     	0x0093d3b0 _call0 + 44
+11  RoboRetro                     	0x0093614a callVoidMethod + 98
+12  RoboRetro                     	0x00935f1a rvmCallVoidInstanceMethodA + 222
+13  RoboRetro                     	0x0093cca6 startThreadEntryPoint + 254
+14  RoboRetro                     	0x0094d18e GC_inner_start_routine + 82
+15  RoboRetro                     	0x0094aca0 GC_call_with_stack_base + 28
+16  RoboRetro                     	0x0094e2ac GC_start_routine + 28
+17  libsystem_pthread.dylib       	0x3476ae64 _pthread_body + 136
+18  libsystem_pthread.dylib       	0x3476add6 _pthread_start + 114
+19  libsystem_pthread.dylib       	0x34768b80 thread_start + 4
+
+Thread 7:
+0   libsystem_kernel.dylib        	0x346ebb38 __psynch_cvwait + 24
+1   libsystem_pthread.dylib       	0x3476a3dc _pthread_cond_wait + 516
+2   libsystem_pthread.dylib       	0x3476b2ac pthread_cond_wait + 36
+3   RoboRetro                     	0x0093908c waitMonitor + 544
+4   RoboRetro                     	0x00938e44 rvmObjectWait + 112
+5   RoboRetro                     	0x0003e84e Java_java_lang_Object_wait + 14
+6   RoboRetro                     	0x003366b4 [J]java.lang.Object.wait(JI)V + 36
+7   RoboRetro                     	0x00336688 [J]java.lang.Object.wait(J)V (/Object.java:401)
+8   RoboRetro                     	0x003515b6 [J]java.lang.ref.ReferenceQueue.remove(J)Ljava/lang/ref/Reference; (/ReferenceQueue.java:102)
+9   RoboRetro                     	0x00351730 [j]java.lang.ref.ReferenceQueue.remove(J)Ljava/lang/ref/Reference;[synchronized] + 96
+10  RoboRetro                     	0x00351506 [J]java.lang.ref.ReferenceQueue.remove()Ljava/lang/ref/Reference; (/ReferenceQueue.java:73)
+11  RoboRetro                     	0x0032bf52 [J]java.lang.Daemons$FinalizerDaemon.run()V + 102
+12  RoboRetro                     	0x0034967a [J]java.lang.Thread.run()V (/Thread.java:837)
+13  RoboRetro                     	0x0093d3b0 _call0 + 44
+14  RoboRetro                     	0x0093614a callVoidMethod + 98
+15  RoboRetro                     	0x00935f1a rvmCallVoidInstanceMethodA + 222
+16  RoboRetro                     	0x0093cca6 startThreadEntryPoint + 254
+17  RoboRetro                     	0x0094d18e GC_inner_start_routine + 82
+18  RoboRetro                     	0x0094aca0 GC_call_with_stack_base + 28
+19  RoboRetro                     	0x0094e2ac GC_start_routine + 28
+20  libsystem_pthread.dylib       	0x3476ae64 _pthread_body + 136
+21  libsystem_pthread.dylib       	0x3476add6 _pthread_start + 114
+22  libsystem_pthread.dylib       	0x34768b80 thread_start + 4
+
+Thread 8:
+0   libsystem_kernel.dylib        	0x346ebb38 __psynch_cvwait + 24
+1   libsystem_pthread.dylib       	0x3476a3dc _pthread_cond_wait + 516
+2   libsystem_pthread.dylib       	0x3476b2ac pthread_cond_wait + 36
+3   RoboRetro                     	0x0093908c waitMonitor + 544
+4   RoboRetro                     	0x00938e44 rvmObjectWait + 112
+5   RoboRetro                     	0x0003e84e Java_java_lang_Object_wait + 14
+6   RoboRetro                     	0x003366b4 [J]java.lang.Object.wait(JI)V + 36
+7   RoboRetro                     	0x00336668 [J]java.lang.Object.wait()V (/Object.java:364)
+8   RoboRetro                     	0x0032c3f8 [J]java.lang.Daemons$FinalizerWatchdogDaemon.waitForObject()Ljava/lang/Object; + 248
+9   RoboRetro                     	0x0032c2c6 [J]java.lang.Daemons$FinalizerWatchdogDaemon.run()V + 38
+10  RoboRetro                     	0x0034967a [J]java.lang.Thread.run()V (/Thread.java:837)
+11  RoboRetro                     	0x0093d3b0 _call0 + 44
+12  RoboRetro                     	0x0093614a callVoidMethod + 98
+13  RoboRetro                     	0x00935f1a rvmCallVoidInstanceMethodA + 222
+14  RoboRetro                     	0x0093cca6 startThreadEntryPoint + 254
+15  RoboRetro                     	0x0094d18e GC_inner_start_routine + 82
+16  RoboRetro                     	0x0094aca0 GC_call_with_stack_base + 28
+17  RoboRetro                     	0x0094e2ac GC_start_routine + 28
+18  libsystem_pthread.dylib       	0x3476ae64 _pthread_body + 136
+19  libsystem_pthread.dylib       	0x3476add6 _pthread_start + 114
+20  libsystem_pthread.dylib       	0x34768b80 thread_start + 4
+
+Thread 9:
+0   libsystem_kernel.dylib        	0x346ec9cc __workq_kernreturn + 8
+1   libsystem_pthread.dylib       	0x34768e9c _pthread_wqthread + 788
+2   libsystem_pthread.dylib       	0x34768b74 start_wqthread + 4
+
+Thread 10:
+0   libsystem_kernel.dylib        	0x346eb8e4 __open_nocancel + 12
+1   libsystem_c.dylib             	0x3464a1d6 fopen + 42
+2   RoboRetro                     	0x00073838 searchForTZFile(char const*, DefaultTZInfo*) + 300
+3   RoboRetro                     	0x0007356c uprv_tzname_51 + 176
+4   RoboRetro                     	0x0012183a icu_51::TimeZone::initDefault() + 122
+5   RoboRetro                     	0x00121b36 icu_51::TimeZone::createDefault() + 94
+6   RoboRetro                     	0x000d8ea0 icu_51::Calendar::createInstance(icu_51::Locale const&, UErrorCode&) + 8
+7   RoboRetro                     	0x0005b0c6 Java_libcore_icu_ICU_initLocaleDataNative + 1374
+8   RoboRetro                     	0x004651d8 [J]libcore.icu.ICU.initLocaleDataNative(Ljava/lang/String;Llibcore/icu/LocaleData;)Z + 60
+9   RoboRetro                     	0x0046521a [j]libcore.icu.ICU.initLocaleDataNative(Ljava/lang/String;Llibcore/icu/LocaleData;)Z[clinit] + 42
+10  RoboRetro                     	0x00465728 [J]libcore.icu.LocaleData.initLocaleData(Ljava/util/Locale;)Llibcore/icu/LocaleData; (/LocaleData.java:174)
+11  RoboRetro                     	0x004654bc [J]libcore.icu.LocaleData.get(Ljava/util/Locale;)Llibcore/icu/LocaleData; (/LocaleData.java:129)
+12  RoboRetro                     	0x00465860 [J]libcore.icu.LocaleData.<clinit>()V (/LocaleData.java:40)
+13  RoboRetro                     	0x0093d3b0 _call0 + 44
+14  RoboRetro                     	0x00930218 rvmInitialize + 408
+15  RoboRetro                     	0x0092ad7c _bcInitializeClass + 24
+16  RoboRetro                     	0x00465632 [j]libcore.icu.LocaleData.get(Ljava/util/Locale;)Llibcore/icu/LocaleData;[clinit] + 30
+17  RoboRetro                     	0x003eb330 [J]java.util.Formatter.format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter; (/Formatter.java:1041)
+18  RoboRetro                     	0x003eb2b0 [J]java.util.Formatter.format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter; (/Formatter.java:1011)
+19  RoboRetro                     	0x00340c66 [J]java.lang.String.format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String; (/String.java:2062)
+20  RoboRetro                     	0x00340bac [J]java.lang.String.format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String; (/String.java:2036)
+21  RoboRetro                     	0x00340be2 [j]java.lang.String.format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;[clinit] + 42
+22  RoboRetro                     	0x008ce140 [J]retrofit.RestAdapter.logAndReplaceRequest(Ljava/lang/String;Lretrofit/client/Request;[Ljava/lang/Object;)Lretrofit/client/Request; (/RestAdapter.java:411)
+23  RoboRetro                     	0x008cfd56 [J]retrofit.RestAdapter$RestHandler.invokeRequest(Lretrofit/RequestInterceptor;Lretrofit/RestMethodInfo;[Ljava/lang/Object;)Ljava/lang/Object; + 450
+24  RoboRetro                     	0x008d02fe [J]retrofit.RestAdapter$RestHandler.access$100(Lretrofit/RestAdapter$RestHandler;Lretrofit/RequestInterceptor;Lretrofit/RestMethodInfo;[Ljava/lang/Object;)Ljava/lang/Object; + 34
+25  RoboRetro                     	0x008d0344 [j]retrofit.RestAdapter$RestHandler.access$100(Lretrofit/RestAdapter$RestHandler;Lretrofit/RequestInterceptor;Lretrofit/RestMethodInfo;[Ljava/lang/Object;)Ljava/lang/Object;[clinit] + 60
+26  RoboRetro                     	0x008d0444 [J]retrofit.RestAdapter$RestHandler$1.invoke(Lretrofit/RequestInterceptor;)Lretrofit/ResponseWrapper; + 32
+27  RoboRetro                     	0x008d2d2a [J]retrofit.RxSupport$2.run()V + 170
+28  RoboRetro                     	0x004243d2 [J]java.util.concurrent.Executors$RunnableAdapter.call()Ljava/lang/Object; + 22
+29  RoboRetro                     	0x0042db26 [J]java.util.concurrent.FutureTask.run()V (/FutureTask.java:237)
+30  RoboRetro                     	0x004377d6 [J]java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V (/ThreadPoolExecutor.java:1112)
+31  RoboRetro                     	0x0043937c [J]java.util.concurrent.ThreadPoolExecutor$Worker.run()V + 20
+32  RoboRetro                     	0x008cb3e8 [J]retrofit.Platform$Base$2$1.run()V + 44
+33  RoboRetro                     	0x0034967a [J]java.lang.Thread.run()V (/Thread.java:837)
+34  RoboRetro                     	0x0093d3b0 _call0 + 44
+35  RoboRetro                     	0x0093614a callVoidMethod + 98
+36  RoboRetro                     	0x00935f1a rvmCallVoidInstanceMethodA + 222
+37  RoboRetro                     	0x0093cca6 startThreadEntryPoint + 254
+38  RoboRetro                     	0x0094d18e GC_inner_start_routine + 82
+39  RoboRetro                     	0x0094aca0 GC_call_with_stack_base + 28
+40  RoboRetro                     	0x0094e2ac GC_start_routine + 28
+41  libsystem_pthread.dylib       	0x3476ae64 _pthread_body + 136
+42  libsystem_pthread.dylib       	0x3476add6 _pthread_start + 114
+43  libsystem_pthread.dylib       	0x34768b80 thread_start + 4
+
+Thread 1 crashed with ARM Thread State (32-bit):
+    r0: 0x00000104    r1: 0x00000000      r2: 0x00000501      r3: 0x00000500
+    r4: 0x00000000    r5: 0x00000000      r6: 0x00000000      r7: 0x04944f60
+    r8: 0x013ce280    r9: 0x00000000     r10: 0x013ce2c8     r11: 0x00000001
+    ip: 0x00000131    sp: 0x04944ee8      lr: 0x3476a3e1      pc: 0x346ebb38
+  cpsr: 0x60000010
